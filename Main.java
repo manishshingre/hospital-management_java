@@ -1,44 +1,45 @@
-import java.io.*;
 import java.util.*;
 
-class staff
+class patient
 {
-    String sid, sname, desg, sex;
-    int salary;
-    void new_staff()
+    String pa_id, name_p , disease ,  gender, admit_status;
+    int age_p;
+    void new_patient()
     {
         Scanner input = new Scanner(System.in);
-        System.out.print("id:-");
-        sid = input.nextLine();
-        System.out.print("name:-");
-        sname = input.nextLine();
-        System.out.print("desigination:-");
-        desg = input.nextLine();
-        System.out.print("sex:-");
-        sex = input.nextLine();
-        System.out.print("salary:-");
-        salary = input.nextInt();
+        System.out.print("Patient id:-");
+        pa_id = input.nextLine();
+        System.out.print("Patient Name:-");
+        name_p = input.nextLine();
+        System.out.print("Patient's Age:-");
+        age_p = input.nextInt();
+        System.out.print("Disease Caused:-");
+        disease = input.nextLine();
+        System.out.print("Sex:-");
+        gender = input.nextLine();
+        System.out.print("Admission Status:-");
+        admit_status = input.nextLine();
     }
-    void staff_info()
+    void patient_info()
     {
-        System.out.println();
+        System.out.println(pa_id + "\t\t" + name_p + " \t\t" + disease + "    ]\t\t" + gender + "     \t\t" + admit_status + "\t\t" + age_p);
     }
 }
 class doctor
 {
-    String did, dname, specilist, appoint, doc_qual;
+    String id_d, name_doc, specialist, appoint_time, doc_qual;
     int droom;
     void new_doctor()
     {
         Scanner input = new Scanner(System.in);
         System.out.print("id:-");
-        did = input.nextLine();
+        id_d = input.nextLine();
         System.out.print("name:-");
-        dname = input.nextLine();
+        name_doc = input.nextLine();
         System.out.print("specilization:-");
-        specilist = input.nextLine();
+        specialist = input.nextLine();
         System.out.print("work time:-");
-        appoint = input.nextLine();
+        appoint_time = input.nextLine();
         System.out.print("qualification:-");
         doc_qual = input.nextLine();
         System.out.print("room no.:-");
@@ -46,32 +47,29 @@ class doctor
     }
     void doctor_info()
     {
-        System.out.println();
+        System.out.println(id_d + "\t" + name_doc + "  \t" + specialist + "     \t" + appoint_time + "    \t" + doc_qual + "       \t" + droom);
     }
 }
-class patient
+class staff
 {
-    String pid, pname, disease, sex, admit_status;
-    int age;
-    void new_patient()
+    String id_s, name_s, designation, sex;
+    int salary;
+    void new_staff()
     {
         Scanner input = new Scanner(System.in);
         System.out.print("id:-");
-        pid = input.nextLine();
+        id_s = input.nextLine();
         System.out.print("name:-");
-        pname = input.nextLine();
-        System.out.print("disease:-");
-        disease = input.nextLine();
+        name_s = input.nextLine();
+        System.out.print("desigination:-");
+        designation = input.nextLine();
         System.out.print("sex:-");
         sex = input.nextLine();
-        System.out.print("admit_status:-");
-        admit_status = input.nextLine();
-        System.out.print("age:-");
-        age = input.nextInt();
+        System.out.print("salary:-");
+        salary = input.nextInt();
     }
-    void patient_info()
+    void staff_info()
     {
-        System.out.println();
+        System.out.println(id_s + "\t" + name_s + "\t" + sex + "\t" + salary);
     }
 }
-
