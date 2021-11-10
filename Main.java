@@ -91,6 +91,9 @@ public class Main {
         doctor[] d = new doctor[25];
         for (int i = 0; i < 25; i++)
             d[i] = new doctor();
+        staff[] s = new staff[100];
+        for (int i = 0; i < 100; i++)
+            s[i] = new staff();
 
         Scanner input = new Scanner(System.in);
         int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1;
@@ -98,7 +101,7 @@ public class Main {
             System.out.println("\n                                    MAIN MENU");
             System.out.println(
                     "_______________________________________________________________________________________________");
-            System.out.println("\n1.Patients  2.Doctors  3.Medicines  4.Laboratories  5. Facilities  6. Staff ");
+            System.out.println("\n1.Patients \t \t \t 2.Doctors  \t \t \t 3. Staff ");
             System.out.println(
                     "_______________________________________________________________________________________________");
             choice = input.nextInt();
@@ -171,7 +174,73 @@ public class Main {
 
             }
 
+            case 3:
+                    {
+                        s3 = 1;
+                        System.out.println("--------------------------------------------------------------------------------");
+                        System.out.println("                       **STAFF SECTION**");
+                        System.out.println("--------------------------------------------------------------------------------");
+                        while (s3 == 1)
+                        {
+                            String a = "nurse", b = "worker", c = "security";
+                            System.out.println("1.Add New Entry \n2.Existing Nurses List\n3.Existing Workers List \n4.Existing Security List");
+                            c1 = input.nextInt();
+                            switch (c1)
+                            {
+                                case 1:
+                                    {
+                                        s[count3].new_staff();
+                                        count3++;
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        System.out.println("id \t Name \t Gender \t Salary");
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        for (j = 0; j < count3; j++)
+                                        {
+                                            if (a.equals(s[j].designation))
+                                                s[j].staff_info();
+                                        }
+                                        break;
+                                    }
+                                case 3:
+                                    {
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        System.out.println("id \t Name \t Gender \t Salary");
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        for (j = 0; j < count3; j++)
+                                        {
+                                            if (b.equals(s[j].designation))
+                                                s[j].staff_info();
+                                        }
+                                        break;
+                                    }
+                                case 4:
+                                    {
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        System.out.println("id \t Name \t Gender \t Salary");
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        for (j = 0; j < count3; j++)
+                                        {
+                                            if (c.equals(s[j].designation))
+                                                s[j].staff_info();
+                                        }
+                                        break;
+                                    }
+                            }
+                            System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                            s3 = input.nextInt();
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        System.out.println(" You Have Enter Wrong Choice!!!");
+                    }
+            }
+
             }
         }
     }
-}
