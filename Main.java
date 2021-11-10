@@ -18,6 +18,7 @@ class patient {
         gender = input.nextLine();
         System.out.print("Admission Status:-");
         admit_status = input.nextLine();
+
     }
 
     void patient_info() {
@@ -101,7 +102,7 @@ public class Main {
             System.out.println("\n                                    MAIN MENU");
             System.out.println(
                     "_______________________________________________________________________________________________");
-            System.out.println("\n1.Patients \t \t \t 2.Doctors  \t \t \t 3. Staff ");
+            System.out.println("\n 1.Doctos  2. Patients  3.Medicines  4.Laboratories  5. Facilities  6. Staff  ");
             System.out.println(
                     "_______________________________________________________________________________________________");
             choice = input.nextInt();
