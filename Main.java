@@ -53,9 +53,34 @@ class doctor {
     }
 }
 
+class nurse{
+    String id_n, name_n, gender_n, department_n, shifts;
+    int salary_n;
+
+    void new_nurse(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("id:-");
+        id_n = input.nextLine();
+        System.out.print("name:-");
+        name_n = input.nextLine();
+        System.out.print("Gender:-");
+        gender_n = input.nextLine();
+        System.out.print("Department: ");
+        department_n = input.nextLine();
+        System.out.print("Shift:-");
+        shifts = input.nextLine();
+        System.out.print("Salary");
+        salary_n = input.nextInt();
+
+    }
+    void nurse_info() {
+        System.out.println(id_n + "\t" + name_n + "\t" + gender_n + "\t" + department_n + "\t" + shifts + "\t" + salary_n);
+    }
+}
+
 class staff {
-    String id_s, name_s, gender_s, department, time_s; 
-    int salary;
+    String id_s, name_s, gender_s, department_s, time_s; 
+    int salary_s;
 
     void new_staff() {
         Scanner input = new Scanner(System.in);
@@ -66,21 +91,20 @@ class staff {
         System.out.print("Gender:-");
         gender_s = input.nextLine();
         System.out.print("Department: ");
-        department = input.nextLine();
+        department_s = input.nextLine();
         System.out.print("salary:-");
-        salary = input.nextInt();
-        System.out.print("Timing: ");
-        time_s= input.nextLine();
+        salary_s = input.nextInt();
+
     }
 
     void staff_info() {
-        System.out.println(id_s + "\t" + name_s + "\t" + gender_s + "\t" + department + "\t" + salary + "\t" + Timing+);
+        System.out.println(id_s + "\t" + name_s + "\t" + gender_s + "\t" + department + "\t" + salary);
     }
 }
 
 public class Main {
     public static void main(String args[]) {
-        int count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0;
+        int count1 = 0, count2 = 0, count3 = 7, count4 = 0, count5 = 0, count6 = 0, count7 = 0;
         System.out.println("\n_________________________________________________________________________________________________________________________________________________________");
         System.out.println(" \n                                   \t\t\t\t\t  SemIII Java Mini Project                                        ");
         System.out.println("___________________________________________________________________________________________________________________________________________________________");
@@ -94,9 +118,34 @@ public class Main {
         staff[] s = new staff[100];
         for (int i = 0; i < 100; i++)
             s[i] = new staff();
+        nurse[] n = new nurse[100];
+        for (int i = 0; i < 100; i++)
+            n[i] = new nurse();
+        
+
+            s[0].id_s = "101";
+            s[0].name_s = "Rani";
+            s[0].department = "Cleaning";
+            s[0].gender_s = "Female";
+            s[0].salary = 20000;
+            s[1].id_s = "102";
+            s[1].name_s = "Rani";
+            s[1].department = "Cleaning";
+            s[1].gender_s = "Female";
+            s[1].salary = 20000;
+            s[2].id_s = "1001";
+            s[2].name_s = "Rani";
+            s[2].department = "Security";
+            s[2].gender_s = "Female";
+            s[2].salary = 20000;
+            s[3].id_s = "1002";
+            s[3].name_s = "Rani";
+            s[3].department = "Security";
+            s[3].gender_s = "Female";
+            s[3].salary = 20000;
 
         Scanner input = new Scanner(System.in);
-        int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1;
+        int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1, s7 = 1;
         while (status == 1) {
             System.out.println("\n                                                     MAIN MENU                                                                          ");
             System.out.println("_________________________________________________________________________________________________________________________________________");
@@ -189,7 +238,7 @@ public class Main {
                     }
                     case 2: {
                         System.out.println("_______________________________________________________________________________________________");
-                        System.out.println("\nId \t Name \t\t\t Gender \t\t Department \t Salary \t Duty Timing");
+                        System.out.println("\nId \t Name \t\t\t           Gender \t\t          Department       \t Salary ");
                         System.out.println(
                                 "_______________________________________________________________________________________________");
                         for (j = 0; j < count3; j++) {
@@ -206,3 +255,4 @@ public class Main {
             }
         }
     }
+}
