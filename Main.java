@@ -53,7 +53,7 @@ class doctor {
 }
 
 class staff {
-    String id_s, name_s, designation, sex;
+    String id_s, name_s, gender_s, department, time_s; 
     int salary;
 
     void new_staff() {
@@ -62,28 +62,27 @@ class staff {
         id_s = input.nextLine();
         System.out.print("name:-");
         name_s = input.nextLine();
-        System.out.print("desigination:-");
-        designation = input.nextLine();
-        System.out.print("sex:-");
-        sex = input.nextLine();
+        System.out.print("Gender:-");
+        gender_s = input.nextLine();
+        System.out.print("Department: ");
+        department = input.nextLine();
         System.out.print("salary:-");
         salary = input.nextInt();
+        System.out.print("Timing: ");
+        time_s= input.nextLine();
     }
 
     void staff_info() {
-        System.out.println(id_s + "\t" + name_s + "\t" + sex + "\t" + salary);
+        System.out.println(id_s + "\t" + name_s + "\t" + gender_s + "\t" + department + "\t" + salary + "\t" + Timing+);
     }
 }
 
 public class Main {
     public static void main(String args[]) {
         int count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0;
-        System.out.println(
-                "\n_________________________________________________________________________________________________________________________________________________________");
-        System.out.println(
-                " \n                                   \t\t\t\t\t  SemIII Java Mini Project                                        ");
-        System.out.println(
-                "___________________________________________________________________________________________________________________________________________________________");
+        System.out.println("\n_________________________________________________________________________________________________________________________________________________________");
+        System.out.println(" \n                                   \t\t\t\t\t  SemIII Java Mini Project                                        ");
+        System.out.println("___________________________________________________________________________________________________________________________________________________________");
 
         patient[] p = new patient[100];
         for (int i = 0; i < 100; i++)
@@ -91,32 +90,32 @@ public class Main {
         doctor[] d = new doctor[25];
         for (int i = 0; i < 25; i++)
             d[i] = new doctor();
+        staff[] s = new staff[100];
+        for (int i = 0; i < 100; i++)
+            s[i] = new staff();
+
 
         Scanner input = new Scanner(System.in);
         int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1;
         while (status == 1) {
-            System.out.println("\n                                    MAIN MENU");
-            System.out.println(
-                    "_______________________________________________________________________________________________");
-            System.out.println("\n1.Patients  2.Doctors  3.Medicines  4.Laboratories  5. Facilities  6. Staff ");
-            System.out.println(
-                    "_______________________________________________________________________________________________");
+            System.out.println("\n                                                     MAIN MENU                                                                          ");
+            System.out.println("_________________________________________________________________________________________________________________________________________");
+            System.out.println("\n1.Patient   2.Doctor   3.Staff   4.Medical  5.Facilities ");
+            System.out.println("_________________________________________________________________________________________________________________________________________");
             choice = input.nextInt();
             switch (choice) {
             case 1: {
-                System.out.println(
-                        "_______________________________________________________________________________________");
+                System.out.println("_____________________________________________________________________________________________________________________________________");
                 System.out.println("        \n             **PATIENT SECTION**");
-                System.out.println(
-                        "_______________________________________________________________________________________");
-                s2 = 1;
-                while (s2 == 1) {
+                System.out.println("_____________________________________________________________________________________________________________________________________");
+                s1 = 1;
+                while (s1 == 1) {
                     System.out.println("1. Add New Patient Entries\n2.Check Existing Patient List");
                     c1 = input.nextInt();
                     switch (c1) {
                     case 1: {
-                        p[count2].new_patient();
-                        count2++;
+                        p[count1].new_patient();
+                        count1++;
                         break;
                     }
                     case 2: {
@@ -125,14 +124,14 @@ public class Main {
                         System.out.println("\n Id \t Name \t Disease \t Gender \t Admit Status \t Age");
                         System.out.println(
                                 "_______________________________________________________________________________________");
-                        for (j = 0; j < count2; j++) {
+                        for (j = 0; j < count1; j++) {
                             p[j].patient_info();
                         }
                         break;
                     }
                     }
                     System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s2 = input.nextInt();
+                    s1 = input.nextInt();
                 }
                 break;
             }
@@ -142,35 +141,68 @@ public class Main {
                 System.out.println("        \n             **Doctor SECTION**");
                 System.out.println(
                         "_______________________________________________________________________________________");
-                s1 = 1;
-                while (s1 == 1) {
+                s2 = 1;
+                while (s2 == 1) {
                     System.out.println("1.Add New Entry\n2.Existing Doctors List");
                     c1 = input.nextInt();
                     switch (c1) {
                     case 1: {
-                        d[count1].new_doctor();
-                        count1++;
+                        d[count2].new_doctor();
+                        count2++;
                         break;
                     }
                     case 2: {
                         System.out.println(
                                 "_______________________________________________________________________________________________");
-                        System.out.println("Id \t Name\t\t Specilist \t Timing \t Qualification \t Room No.");
+                        System.out.println("\nId \t Name\t\t Specilist \t Timing \t Qualification \t Room No.");
                         System.out.println(
                                 "_______________________________________________________________________________________________");
-                        for (j = 0; j < count1; j++) {
+                        for (j = 0; j < count2; j++) {
                             d[j].doctor_info();
                         }
                         break;
                     }
                     }
                     System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s1 = input.nextInt();
+                    s2 = input.nextInt();
                 }
                 break;
 
             }
+            case 3:
+            {
+                
+                System.out.println("_________________________________________________________________________________________________________________________________");
+                System.out.println("              \n       **STAFF SECTION**");
+                System.out.println("_________________________________________________________________________________________________________________________________");
 
+                s3 = 1;
+                while (s3 == 1)
+                {
+                    System.out.println("1.Add New Entry\n2.Check Existing entries of the Staff"); 
+                    c1 = input.nextInt();
+                    switch (c1) {
+                    case 1: {
+                        s[count3].new_staff();
+                        count3++;
+                        break;
+                    }
+                    case 2: {
+                        System.out.println("_______________________________________________________________________________________________");
+                        System.out.println("\nId \t Name \t\t\t Gender \t\t Department \t Salary \t Duty Timing");
+                        System.out.println(
+                                "_______________________________________________________________________________________________");
+                        for (j = 0; j < count3; j++) {
+                            s[j].staff_info();
+                        }
+                        break;
+                    }
+                    }
+                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                    s3 = input.nextInt();
+                }
+                break;
+                }
             }
         }
     }
