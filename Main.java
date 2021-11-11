@@ -18,6 +18,7 @@ class patient {
         gender = input.nextLine();
         System.out.print("Admission Status:-");
         admit_status = input.nextLine();
+
     }
 
     void patient_info() {
@@ -93,7 +94,6 @@ public class Main {
         staff[] s = new staff[100];
         for (int i = 0; i < 100; i++)
             s[i] = new staff();
-
 
         Scanner input = new Scanner(System.in);
         int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1;
@@ -206,4 +206,3 @@ public class Main {
             }
         }
     }
-}
