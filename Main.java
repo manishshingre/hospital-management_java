@@ -74,7 +74,22 @@ class staff {
     }
 
     void staff_info() {
-        System.out.println(id_s + "\t" + name_s + "\t" + gender_s + "\t" + department + "\t" + salary + "\t" + Timing+);
+        System.out.println(id_s + "\t" + name_s + "\t" + gender_s + "\t" + department + "\t" + salary + "\t" + time_s);
+    }
+}
+
+class facility 
+{
+    String fac_name;
+    void add_faci()
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("facility:-");
+        fac_name = input.nextLine();
+    }
+    void show_faci()
+    {
+        System.out.println(fac_name);
     }
 }
 
@@ -94,13 +109,17 @@ public class Main {
         staff[] s = new staff[100];
         for (int i = 0; i < 100; i++)
             s[i] = new staff();
+        facility[] f = new facility[20];
+        for (int i = 0; i < 20; i++)
+            f[i] = new facility();
+
 
         Scanner input = new Scanner(System.in);
         int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1;
         while (status == 1) {
             System.out.println("\n                                                     MAIN MENU                                                                          ");
             System.out.println("_________________________________________________________________________________________________________________________________________");
-            System.out.println("\n1.Patient   2.Doctor   3.Staff   4.Medical  5.Facilities ");
+            System.out.println("\n1.Patient   2.Doctor   3.Staff   4.Medical   5.Lab   6.Facilities ");
             System.out.println("_________________________________________________________________________________________________________________________________________");
             choice = input.nextInt();
             switch (choice) {
@@ -203,6 +222,48 @@ public class Main {
                 }
                 break;
                 }
-            }
+                case 6:
+                    {
+                        s6 = 1;
+                        System.out.println("--------------------------------------------------------------------------------");
+                        System.out.println("          **HOSPITAL FACILITY SECTION**");
+                        System.out.println("--------------------------------------------------------------------------------");
+                        while (s6 == 1)
+                        {
+                            System.out.println("1.Add New Facility\n2.Existing Facilities List");
+                            c1 = input.nextInt();
+                            switch (c1)
+                            {
+                                case 1:
+                                    {
+                                        f[count5].add_faci();
+                                        count5++;
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        System.out.println("Hospital  Facility are:");
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        for (j = 0; j < count5; j++) {
+                                            f[j].show_faci();
+                                        }
+                                        break;
+                                    }
+                                }
+                                System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                                s4 = input.nextInt();
+                            }
+                            break;
+                        }
+
+                }
+                System.out.println("\nReturn to MAIN MENU Press 1");
+                status = input.nextInt();
         }
-    }
+     }
+}        
+                            
+           
+            
+        
