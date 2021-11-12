@@ -127,6 +127,24 @@ class medical {
     }
 }
 
+class lab
+{
+    String test;
+    int lab_cost;
+    void new_lab()
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Facility:-");
+        test = input.nextLine();
+        System.out.print("cost:-");
+        lab_cost = input.nextInt();
+    }
+    void lab_list()
+    {
+        System.out.println(test + "\t\t" + lab_cost);
+    }
+}
+
 class facility {
     String fac_name;
 
@@ -143,7 +161,7 @@ class facility {
 
 public class Main {
     public static void main(String args[]) {
-        int count1 = 0, count2 = 0, count3 = 4, count4 = 4, count5 = 0, count6 = 0, count7 = 0;
+        int count1 = 0, count2 = 0, count3 = 4, count4 = 4, count5 = 0, count6 = 4, count7 = 0;
         System.out.println(
                 "\n_________________________________________________________________________________________________________________________________________________________");
         System.out.println(
@@ -164,12 +182,14 @@ public class Main {
         for (int i = 0; i < 100; i++)
             m[i] = new medical();
         facility[] f = new facility[20];
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 20; i++) 
             f[i] = new facility();
-        }
         nurse[] n = new nurse[100];
         for (int i = 0; i < 100; i++)
             n[i] = new nurse();
+        lab[] l = new lab[20];
+        for (int i = 0; i < 20; i++)
+            l[i] = new lab();
 
         d[0].id_d = "21";
         d[0].name_doc = "Dr.Ghanendra";
@@ -196,51 +216,51 @@ public class Main {
         d[3].doc_qual = "MBBS,MS";
         d[3].droom = 40;
 
-        s[0].id_s = "101";
-        s[0].name_s = "Rani";
-        s[0].department_s = "Cleaning";
-        s[0].gender_s = "Female";
-        s[0].salary_s = 20000;
-        s[1].id_s = "102";
-        s[1].name_s = "Rani";
-        s[1].department_s = "Cleaning";
-        s[1].gender_s = "Female";
+        s[0].id_s = "S101";
+        s[0].name_s = "Raju";
+        s[0].department_s = "Security";
+        s[0].gender_s = "Male";
+        s[0].salary_s = 35000;
+        s[1].id_s = "S102";
+        s[1].name_s = "Raghu";
+        s[1].department_s = "Security";
+        s[1].gender_s = "Cleaning";
         s[1].salary_s = 20000;
-        s[2].id_s = "1001";
-        s[2].name_s = "Rani";
-        s[2].department_s = "Security";
+        s[2].id_s = "S103";
+        s[2].name_s = "Anjali";
+        s[2].department_s = "Cleaning";
         s[2].gender_s = "Female";
         s[2].salary_s = 20000;
-        s[3].id_s = "1002";
-        s[3].name_s = "Rani";
-        s[3].department_s = "Security";
-        s[3].gender_s = "Female";
+        s[3].id_s = "S104";
+        s[3].name_s = "Rajiv";
+        s[3].department_s = "Cleaning";
+        s[3].gender_s = "Male";
         s[3].salary_s = 20000;
 
-        n[0].id_n = "101";
-        n[0].name_n = "Rani";
+        n[0].id_n = "N101";
+        n[0].name_n = "Jenny";
         n[0].gender_n = "Female";
-        n[0].department_n = "Cleaning";
+        n[0].department_n = "OPD";
         n[0].shift_n = "Morning";
-        n[0].salary_n = 20000;
-        n[1].id_n = "101";
-        n[1].name_n = "Rani";
+        n[0].salary_n = 45000;
+        n[1].id_n = "N102";
+        n[1].name_n = "Maya";
         n[1].gender_n = "Female";
-        n[1].department_n = "Cleaning";
-        n[1].shift_n = "Morning";
-        n[1].salary_n = 20000;
-        n[2].id_n = "101";
-        n[2].name_n = "Rani";
-        n[2].gender_n = "Female";
-        n[2].department_n = "Cleaning";
-        n[2].shift_n = "Morning";
-        n[2].salary_n = 20000;
-        n[3].id_n = "101";
-        n[3].name_n = "Rani";
+        n[1].department_n = "ICU";
+        n[1].shift_n = "Evening";
+        n[1].salary_n = 45000;
+        n[2].id_n = "N103";
+        n[2].name_n = "Geroge";
+        n[2].gender_n = "Male";
+        n[2].department_n = "OT";
+        n[2].shift_n = "Evening";
+        n[2].salary_n = 50000;
+        n[3].id_n = "N104";
+        n[3].name_n = "Shewta";
         n[3].gender_n = "Female";
-        n[3].department_n = "Cleaning";
-        n[3].shift_n = "Morning";
-        n[3].salary_n = 20000;
+        n[3].department_n = "Emergency";
+        n[3].shift_n = "Night";
+        n[3].salary_n = 50000;
 
         m[0].med_name = "Corex";
         m[0].med_comp = "Cino pvt";
@@ -262,6 +282,16 @@ public class Main {
         m[3].exp_date = "12-4-12";
         m[3].med_cost = 1100;
         m[3].count = 100;
+
+        l[0].test = "CBC";
+        l[0].lab_cost = 500;
+        l[1].test = "Thyroid";
+        l[1].lab_cost = 700;
+        l[2].test = "Lipid Panel";
+        l[2].lab_cost = 800;
+        l[3].test = "BP";
+        l[3].lab_cost = 450;
+        
 
         Scanner input = new Scanner(System.in);
         int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1, s7 = 1;
@@ -451,39 +481,40 @@ public class Main {
                 break;
             }
 
-            case 6: {
-                s6 = 1;
-                System.out.println(
-                        "_________________________________________________________________________________________________________________________________");
-                System.out.println("          **HOSPITAL FACILITY SECTION**");
-                System.out.println(
-                        "_________________________________________________________________________________________________________________________________");
-                while (s6 == 1) {
-                    System.out.println("1.Add New Facility\n2.Existing Facilities List");
-                    c1 = input.nextInt();
-                    switch (c1) {
-                    case 1: {
-                        f[count5].add_faci();
-                        count5++;
-                        break;
-                    }
-                    case 2: {
-                        System.out.println(
-                                "_________________________________________________________________________________________________________________________________");
-                        System.out.println("Hospital  Facility are:");
-                        System.out.println(
-                                "_________________________________________________________________________________________________________________________________");
-                        for (j = 0; j < count5; j++) {
-                            f[j].show_faci();
+            case 6:
+                    {
+                        s6 = 1;
+                        System.out.println("--------------------------------------------------------------------------------");
+                        System.out.println("                    **LABORATORY SECTION**");
+                        System.out.println("--------------------------------------------------------------------------------");
+                        while (s6 == 1)
+                        {
+                            System.out.println("1.Add New Entry \n2.Existing Laboratories List");
+                            c1 = input.nextInt();
+                            switch (c1)
+                            {
+                                case 1:
+                                    {
+                                        l[count6].new_lab();
+                                        count6++;
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        System.out.println("Fecilities\t\t Cost");
+                                        System.out.println("--------------------------------------------------------------------------------");
+                                        for (j = 0; j < count6; j++) {
+                                            l[j].lab_list();
+                                        }
+                                        break;
+                                    }
+                            }
+                            System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                            s4 = input.nextInt();
                         }
                         break;
                     }
-                    }
-                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s4 = input.nextInt();
-                }
-                break;
-            }
 
             case 7: {
                 s7 = 1;
