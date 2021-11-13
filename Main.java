@@ -127,20 +127,19 @@ class medical {
     }
 }
 
-class lab
-{
+class lab {
     String test;
     int lab_cost;
-    void new_lab()
-    {
+
+    void new_lab() {
         Scanner input = new Scanner(System.in);
         System.out.print("Facility:-");
         test = input.nextLine();
         System.out.print("cost:-");
         lab_cost = input.nextInt();
     }
-    void lab_list()
-    {
+
+    void lab_list() {
         System.out.println(test + "\t\t" + lab_cost);
     }
 }
@@ -161,7 +160,7 @@ class facility {
 
 public class Main {
     public static void main(String args[]) {
-        int count1 = 0, count2 = 0, count3 = 4, count4 = 4, count5 = 0, count6 = 4, count7 = 0;
+        int count1 = 0, count2 = 4, count3 = 4, count4 = 4, count5 = 4, count6 = 4, count7 = 0;
         System.out.println(
                 "\n_________________________________________________________________________________________________________________________________________________________");
         System.out.println(
@@ -182,7 +181,7 @@ public class Main {
         for (int i = 0; i < 100; i++)
             m[i] = new medical();
         facility[] f = new facility[20];
-        for (int i = 0; i < 20; i++) 
+        for (int i = 0; i < 20; i++)
             f[i] = new facility();
         nurse[] n = new nurse[100];
         for (int i = 0; i < 100; i++)
@@ -191,30 +190,30 @@ public class Main {
         for (int i = 0; i < 20; i++)
             l[i] = new lab();
 
-        d[0].id_d = "21";
-        d[0].name_doc = "Dr.Ghanendra";
-        d[0].specialist = "ENT";
-        d[0].appoint_time = "5-11AM";
+        d[0].id_d = "D101";
+        d[0].name_doc = "Dr.Rajendra";
+        d[0].specialist = "Orthopedic";
+        d[0].appoint_time = "7.00am to 1.00pm";
         d[0].doc_qual = "MBBS,MD";
-        d[0].droom = 17;
-        d[1].id_d = "32";
-        d[1].name_doc = "Dr.Vikram";
+        d[0].droom = 11;
+        d[1].id_d = "D102";
+        d[1].name_doc = "Dr.Suresh";
         d[1].specialist = "Physician";
-        d[1].appoint_time = "10-3AM";
+        d[1].appoint_time = "10.00am to 3.00pm";
         d[1].doc_qual = "MBBS,MD";
-        d[1].droom = 45;
-        d[2].id_d = "17";
-        d[2].name_doc = "Dr.Rekha";
+        d[1].droom = 12;
+        d[2].id_d = "D103";
+        d[2].name_doc = "Dr.Sashikala";
         d[2].specialist = "Surgeon";
-        d[2].appoint_time = "8-2AM";
+        d[2].appoint_time = "8pm to 2.00am";
         d[2].doc_qual = "BDM";
-        d[2].droom = 8;
-        d[3].id_d = "33";
-        d[3].name_doc = "Dr.Pramod";
-        d[3].specialist = "Artho";
-        d[3].appoint_time = "10-4PM";
-        d[3].doc_qual = "MBBS,MS";
-        d[3].droom = 40;
+        d[2].droom = 13;
+        d[3].id_d = "D104";
+        d[3].name_doc = "Dr.Aashish";
+        d[3].specialist = "Nerologist";
+        d[3].appoint_time = "5.00pm to 9.00pm";
+        d[3].doc_qual = "MBBS,DM";
+        d[3].droom = 14;
 
         s[0].id_s = "S101";
         s[0].name_s = "Raju";
@@ -264,24 +263,24 @@ public class Main {
 
         m[0].med_name = "Corex";
         m[0].med_comp = "Cino pvt";
-        m[0].exp_date = "9-5-16";
-        m[0].med_cost = 55;
-        m[0].count = 8;
+        m[0].exp_date = "9-5-24";
+        m[0].med_cost = 78;
+        m[0].count = 20;
         m[1].med_name = "Nytra";
         m[1].med_comp = "Ace pvt";
-        m[1].exp_date = "4-4-15";
-        m[1].med_cost = 500;
-        m[1].count = 5;
+        m[1].exp_date = "4-4-25";
+        m[1].med_cost = 512;
+        m[1].count = 4;
         m[2].med_name = "Brufa";
         m[2].med_comp = "Reckitt";
-        m[2].exp_date = "12-7-17";
-        m[2].med_cost = 50;
-        m[2].count = 56;
+        m[2].exp_date = "12-7-23";
+        m[2].med_cost = 122;
+        m[2].count = 16;
         m[3].med_name = "Pride";
         m[3].med_comp = "DDF pvt";
-        m[3].exp_date = "12-4-12";
-        m[3].med_cost = 1100;
-        m[3].count = 100;
+        m[3].exp_date = "12-4-24";
+        m[3].med_cost = 1200;
+        m[3].count = 40;
 
         l[0].test = "CBC";
         l[0].lab_cost = 500;
@@ -291,7 +290,6 @@ public class Main {
         l[2].lab_cost = 800;
         l[3].test = "BP";
         l[3].lab_cost = 450;
-        
 
         Scanner input = new Scanner(System.in);
         int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1, s7 = 1;
@@ -358,7 +356,7 @@ public class Main {
                     case 2: {
                         System.out.println(
                                 "_______________________________________________________________________________________________");
-                        System.out.println("\nId \t Name\t\t Specilist \t Timing \t Qualification \t Room No.");
+                        System.out.println("\nId \t Name\t\t Specilist \t Timing \t\tQualification \t Room No.");
                         System.out.println(
                                 "_______________________________________________________________________________________________");
                         for (j = 0; j < count2; j++) {
@@ -454,14 +452,14 @@ public class Main {
                 System.out.println(
                         "_________________________________________________________________________________________________________________________________");
 
-                s4 = 1;
-                while (s4 == 1) {
+                s5 = 1;
+                while (s5 == 1) {
                     System.out.println("1.Add New Entry\n2. Existing Medicines List");
                     c1 = input.nextInt();
                     switch (c1) {
                     case 1: {
-                        m[count3].new_medi();
-                        count3++;
+                        m[count5].new_medi();
+                        count5++;
                         break;
                     }
                     case 2: {
@@ -470,7 +468,7 @@ public class Main {
                         System.out.println("Name \t Company \t Expiry Date \t Cost");
                         System.out.println(
                                 "_________________________________________________________________________________________________________________________________");
-                        for (j = 0; j < count3; j++) {
+                        for (j = 0; j < count5; j++) {
                             m[j].find_medi();
                         }
                     }
@@ -481,40 +479,37 @@ public class Main {
                 break;
             }
 
-            case 6:
-                    {
-                        s6 = 1;
-                        System.out.println("--------------------------------------------------------------------------------");
-                        System.out.println("                    **LABORATORY SECTION**");
-                        System.out.println("--------------------------------------------------------------------------------");
-                        while (s6 == 1)
-                        {
-                            System.out.println("1.Add New Entry \n2.Existing Laboratories List");
-                            c1 = input.nextInt();
-                            switch (c1)
-                            {
-                                case 1:
-                                    {
-                                        l[count6].new_lab();
-                                        count6++;
-                                        break;
-                                    }
-                                case 2:
-                                    {
-                                        System.out.println("--------------------------------------------------------------------------------");
-                                        System.out.println("Fecilities\t\t Cost");
-                                        System.out.println("--------------------------------------------------------------------------------");
-                                        for (j = 0; j < count6; j++) {
-                                            l[j].lab_list();
-                                        }
-                                        break;
-                                    }
-                            }
-                            System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                            s4 = input.nextInt();
+            case 6: {
+                s6 = 1;
+                System.out.println("--------------------------------------------------------------------------------");
+                System.out.println("                    **LABORATORY SECTION**");
+                System.out.println("--------------------------------------------------------------------------------");
+                while (s6 == 1) {
+                    System.out.println("1.Add New Entry \n2.Existing Laboratories List");
+                    c1 = input.nextInt();
+                    switch (c1) {
+                    case 1: {
+                        l[count6].new_lab();
+                        count6++;
+                        break;
+                    }
+                    case 2: {
+                        System.out.println(
+                                "--------------------------------------------------------------------------------");
+                        System.out.println("Fecilities\t\t Cost");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------");
+                        for (j = 0; j < count6; j++) {
+                            l[j].lab_list();
                         }
                         break;
                     }
+                    }
+                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                    s4 = input.nextInt();
+                }
+                break;
+            }
 
             case 7: {
                 s7 = 1;
