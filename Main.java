@@ -160,7 +160,7 @@ class facility {
 
 public class Main {
     public static void main(String args[]) {
-        int count1 = 0, count2 = 4, count3 = 4, count4 = 4, count5 = 4, count6 = 4, count7 = 0;
+        int count1 = 0, count2 = 4, count3 = 4, count4 = 4, count5 = 4, count6 = 4, count7 = 4;
         System.out.println(
                 "\n_________________________________________________________________________________________________________________________________________________________");
         System.out.println(
@@ -171,8 +171,8 @@ public class Main {
         patient[] p = new patient[100];
         for (int i = 0; i < 100; i++)
             p[i] = new patient();
-        doctor[] d = new doctor[25];
-        for (int i = 0; i < 25; i++)
+        doctor[] d = new doctor[50];
+        for (int i = 0; i < 50; i++)
             d[i] = new doctor();
         staff[] s = new staff[100];
         for (int i = 0; i < 100; i++)
@@ -290,6 +290,11 @@ public class Main {
         l[2].lab_cost = 800;
         l[3].test = "BP";
         l[3].lab_cost = 450;
+
+        f[0].fac_name = "Ambulance";
+        f[1].fac_name = "Admit Facility ";
+        f[2].fac_name = "Canteen";
+        f[3].fac_name = "Emergency";
 
         Scanner input = new Scanner(System.in);
         int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1, s7 = 1;
