@@ -10,20 +10,20 @@ class patient {
         pa_id = input.nextLine();
         System.out.print("Patient Name:-");
         name_p = input.nextLine();
-        System.out.print("Patient's Age:-");
-        age_p = input.nextInt();
-        System.out.println("Disease:-");
+        System.out.print("Disease:-");
         disease = input.nextLine();
-        System.out.println("Sex:-");
+        System.out.print("Sex:-");
         gender = input.nextLine();
         System.out.print("Admission Status:-");
         admit_status = input.nextLine();
+        System.out.print("Patient's Age:-");
+        age_p = input.nextInt();
 
     }
 
     void patient_info() {
         System.out.println(pa_id + "\t" + name_p + " \t" + disease + "    \t" + gender + "     \t"
-                + admit_status + "\t " + age_p);
+                + admit_status + "\t\t " + age_p);
     }
 }
 
