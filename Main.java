@@ -167,8 +167,8 @@ public class Main {
         patient[] p = new patient[100];
         for (int i = 0; i < 100; i++)
             p[i] = new patient();
-        doctor[] d = new doctor[25];
-        for (int i = 0; i < 25; i++)
+        doctor[] d = new doctor[50];
+        for (int i = 0; i < 50; i++)
             d[i] = new doctor();
         staff[] s = new staff[100];
         for (int i = 0; i < 100; i++)
