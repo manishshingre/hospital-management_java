@@ -1,30 +1,26 @@
 import java.util.*;
+import javax.swing.JOptionPane ;
 
 class patient {
-    String pa_id, name_p, disease, gender, admit_status;
+    String pa_id, name_p, disease, gender, admit_status, Age;
     int age_p;
 
     void new_patient() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Patient Id:-");
-        pa_id = input.nextLine();
-        System.out.print("Patient Name:-");
-        name_p = input.nextLine();
-        System.out.print("Disease:-");
-        disease = input.nextLine();
-        System.out.print("Sex:-");
-        gender = input.nextLine();
-        System.out.print("Admission Status:-");
-        admit_status = input.nextLine();
-        System.out.print("Patient's Age:-");
+        
+        pa_id = JOptionPane.showInputDialog("Enter Patient ID:");
+        name_p = JOptionPane.showInputDialog("Enter Name:");
+        disease = JOptionPane.showInputDialog("Enter Disease Caused:");
+        gender = JOptionPane.showInputDialog("Enter Gender:");
+        admit_status = JOptionPane.showInputDialog("Enter Admission Status :");
         boolean flag = false;
         do {
             try {
-                age_p = input.nextInt();
+                Age = JOptionPane.showInputDialog("Enter Age:");
+                age_p = Integer.parseInt (Age);
                 flag = true;
-            } catch (InputMismatchException exception) {
-                System.out.println("Integers only, please.");
-                input.next();
+            } catch (NumberFormatException exception) {
+               JOptionPane.showMessageDialog(null, "Enter only integer");
+                
             }
         } while (flag == false);
 
@@ -37,30 +33,26 @@ class patient {
 }
 
 class doctor {
-    String id_d, name_doc, specialist, appoint_time, doc_qual;
+    String id_d, name_doc, specialist, appoint_time, doc_qual , room;
     int droom;
 
     void new_doctor() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Id:-");
-        id_d = input.nextLine();
-        System.out.print("Name:-");
-        name_doc = input.nextLine();
-        System.out.print("Specilization:-");
-        specialist = input.nextLine();
-        System.out.print("Work Time:-");
-        appoint_time = input.nextLine();
-        System.out.print("Qualification:-");
-        doc_qual = input.nextLine();
-        System.out.print("Room No.:-");
+        
+        
+        id_d = JOptionPane.showInputDialog("Enter Doctor's ID:");
+        name_doc =  JOptionPane.showInputDialog("Enter Name:");
+        specialist =  JOptionPane.showInputDialog("Enter Specialization:");
+        appoint_time =  JOptionPane.showInputDialog("Enter Work Time:");
+        doc_qual =  JOptionPane.showInputDialog("Enter Qualification:");
         boolean flag = false;
         do {
             try {
-                droom = input.nextInt();
+                room =  JOptionPane.showInputDialog("Enter Room No:");
+                droom = Integer.parseInt (room);
                 flag = true;
-            } catch (InputMismatchException exception) {
-                System.out.println("Integers only, please.");
-                input.next();
+            } 
+            catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(null, "Enter only integer");
             }
         } while (flag == false);
     }
@@ -72,28 +64,25 @@ class doctor {
 }
 
 class staff {
-    String id_s, name_s, gender_s, department_s, time_s;
+    String id_s, name_s, gender_s, department_s, time_s, salary;
     int salary_s;
 
     void new_staff() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("id:-");
-        id_s = input.nextLine();
-        System.out.print("name:-");
-        name_s = input.nextLine();
-        System.out.print("Gender:-");
-        gender_s = input.nextLine();
-        System.out.print("Department: ");
-        department_s = input.nextLine();
-        System.out.print("salary:-");
+        
+        
+        id_s = JOptionPane.showInputDialog("Enter Staff ID:");
+        name_s = JOptionPane.showInputDialog("Enter Name:");
+        gender_s = JOptionPane.showInputDialog("Enter Gender:");
+        department_s = JOptionPane.showInputDialog("Enter Department:");
         boolean flag = false;
         do {
             try {
-                salary_s = input.nextInt();
+                salary = JOptionPane.showInputDialog("Enter Salary:");
+                salary_s = Integer.parseInt(salary);
                 flag = true;
-            } catch (InputMismatchException exception) {
-                System.out.println("Integers only, please.");
-                input.next();
+            } 
+            catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(null, "ENTER THE SALARY IN DIGITS ONLY:");
             }
         } while (flag == false);
 
@@ -105,30 +94,25 @@ class staff {
 }
 
 class nurse {
-    String id_n, name_n, gender_n, department_n, shift_n;
+    String id_n, name_n, gender_n, department_n, shift_n , salaryn;
     int salary_n;
 
     void new_nurse() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("id:-");
-        id_n = input.nextLine();
-        System.out.print("name:-");
-        name_n = input.nextLine();
-        System.out.print("Gender:-");
-        gender_n = input.nextLine();
-        System.out.print("Department: ");
-        department_n = input.nextLine();
-        System.out.print("Shift:-");
-        shift_n = input.nextLine();
-        System.out.print("Salary");
+        
+        
+        id_n =  JOptionPane.showInputDialog("Enter Nurse ID:"); 
+        name_n =  JOptionPane.showInputDialog("Enter Name:");
+        gender_n =  JOptionPane.showInputDialog("Enter Gender:");
+        department_n =  JOptionPane.showInputDialog("Enter Department:");
+        shift_n =  JOptionPane.showInputDialog("Enter Shift:");
         boolean flag = false;
         do {
             try {
-                salary_n = input.nextInt();
+                salaryn = JOptionPane.showInputDialog("Enter Salary:");
+                salary_n = Integer.parseInt(salaryn);
                 flag = true;
-            } catch (InputMismatchException exception) {
-                System.out.println("Integers only, please.");
-                input.next();
+            } catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(null, "ENTER SALARY IN DIGITS ONLY");
             }
         } while (flag == false);
 
@@ -141,37 +125,35 @@ class nurse {
 }
 
 class medical {
-    String med_name, med_comp, exp_date;
+    String med_name, med_comp, exp_date, cost, units;
     int med_cost, count;
 
     void new_medi() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Name:-");
-        med_name = input.nextLine();
-        System.out.print("Company:-");
-        med_comp = input.nextLine();
-        System.out.print("Expiry Date:-");
-        exp_date = input.nextLine();
-        System.out.print("Cost:-");
+        
+      
+        med_name =  JOptionPane.showInputDialog("Enter Name of the Medicine:");
+        med_comp =  JOptionPane.showInputDialog("Enter Name of the Company:");
+        exp_date =  JOptionPane.showInputDialog("Enter Expiry Date:");
         boolean flag = false;
         do {
             try {
-                med_cost = input.nextInt();
+                cost = JOptionPane.showInputDialog("Enter the Cost");
+                med_cost = Integer.parseInt(cost);
                 flag = true;
-            } catch (InputMismatchException exception) {
-                System.out.println("Integers only, please.");
-                input.next();
+            } catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(null, "ENTER COST IN DIGITS ONLY");
             }
         } while (flag == false);
-        System.out.print("No of Units:-");
+
+        
         boolean flag1 = false;
         do {
             try {
-                count = input.nextInt();
+                units = JOptionPane.showInputDialog("Enter No. of Units");
+                count = Integer.parseInt(units);
                 flag1 = true;
-            } catch (InputMismatchException exception) {
-                System.out.println("Integers only, please.");
-                input.next();
+            } catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(null, "ENTER UNITS IN DIGITS ONLY");
             }
         } while (flag1 == false);
     }
@@ -182,22 +164,22 @@ class medical {
 }
 
 class lab {
-    String test;
+    String test, cost;
     int lab_cost;
 
     void new_lab() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Facility:-");
-        test = input.nextLine();
-        System.out.print("cost:-");
+       
+        
+        test =  JOptionPane.showInputDialog("Enter Test Name:");
+        
         boolean flag = false;
         do {
             try {
-                lab_cost = input.nextInt();
+                cost = JOptionPane.showInputDialog("Enter the Cost:");
+                lab_cost = Integer.parseInt(cost);
                 flag = true;
-            } catch (InputMismatchException exception) {
-                System.out.println("Integers only, please.");
-                input.next();
+            } catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(null, "ENTER COST IN DIGITS ONLY");
             }
         } while (flag == false);
     }
@@ -211,9 +193,9 @@ class facility {
     String fac_name;
 
     void add_faci() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("facility:-");
-        fac_name = input.nextLine();
+        
+       
+        fac_name =  JOptionPane.showInputDialog("Enter Facility Name:");
     }
 
     void show_faci() {
