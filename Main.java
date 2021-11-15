@@ -17,13 +17,22 @@ class patient {
         System.out.print("Admission Status:-");
         admit_status = input.nextLine();
         System.out.print("Patient's Age:-");
-        age_p = input.nextInt();
+        boolean flag = false;
+        do {
+            try {
+                age_p = input.nextInt();
+                flag = true;
+            } catch (InputMismatchException exception) {
+                System.out.println("Integers only, please.");
+                input.next();
+            }
+        } while (flag == false);
 
     }
 
     void patient_info() {
-        System.out.println(pa_id + "\t" + name_p + " \t" + disease + "    \t" + gender + "     \t"
-                + admit_status + "\t\t " + age_p);
+        System.out.println(pa_id + "\t" + name_p + " \t" + disease + "    \t" + gender + "     \t" + admit_status
+                + "\t\t " + age_p);
     }
 }
 
@@ -44,7 +53,16 @@ class doctor {
         System.out.print("Qualification:-");
         doc_qual = input.nextLine();
         System.out.print("Room No.:-");
-        droom = input.nextInt();
+        boolean flag = false;
+        do {
+            try {
+                droom = input.nextInt();
+                flag = true;
+            } catch (InputMismatchException exception) {
+                System.out.println("Integers only, please.");
+                input.next();
+            }
+        } while (flag == false);
     }
 
     void doctor_info() {
@@ -68,7 +86,16 @@ class staff {
         System.out.print("Department: ");
         department_s = input.nextLine();
         System.out.print("salary:-");
-        salary_s = input.nextInt();
+        boolean flag = false;
+        do {
+            try {
+                salary_s = input.nextInt();
+                flag = true;
+            } catch (InputMismatchException exception) {
+                System.out.println("Integers only, please.");
+                input.next();
+            }
+        } while (flag == false);
 
     }
 
@@ -94,7 +121,16 @@ class nurse {
         System.out.print("Shift:-");
         shift_n = input.nextLine();
         System.out.print("Salary");
-        salary_n = input.nextInt();
+        boolean flag = false;
+        do {
+            try {
+                salary_n = input.nextInt();
+                flag = true;
+            } catch (InputMismatchException exception) {
+                System.out.println("Integers only, please.");
+                input.next();
+            }
+        } while (flag == false);
 
     }
 
@@ -117,9 +153,27 @@ class medical {
         System.out.print("Expiry Date:-");
         exp_date = input.nextLine();
         System.out.print("Cost:-");
-        med_cost = input.nextInt();
+        boolean flag = false;
+        do {
+            try {
+                med_cost = input.nextInt();
+                flag = true;
+            } catch (InputMismatchException exception) {
+                System.out.println("Integers only, please.");
+                input.next();
+            }
+        } while (flag == false);
         System.out.print("No of Units:-");
-        count = input.nextInt();
+        boolean flag1 = false;
+        do {
+            try {
+                count = input.nextInt();
+                flag1 = true;
+            } catch (InputMismatchException exception) {
+                System.out.println("Integers only, please.");
+                input.next();
+            }
+        } while (flag1 == false);
     }
 
     void find_medi() {
@@ -136,7 +190,16 @@ class lab {
         System.out.print("Facility:-");
         test = input.nextLine();
         System.out.print("cost:-");
-        lab_cost = input.nextInt();
+        boolean flag = false;
+        do {
+            try {
+                lab_cost = input.nextInt();
+                flag = true;
+            } catch (InputMismatchException exception) {
+                System.out.println("Integers only, please.");
+                input.next();
+            }
+        } while (flag == false);
     }
 
     void lab_list() {
@@ -160,10 +223,13 @@ class facility {
 
 public class Main {
     public static void main(String args[]) {
-        int count1 = 0, count2 = 4, count3 = 4, count4 = 4, count5 = 4, count6 = 4, count7 = 5 ;
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-        System.out.println("                                                           SemIII Java Mini Project                                                   |");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+        int count1 = 0, count2 = 4, count3 = 4, count4 = 4, count5 = 4, count6 = 4, count7 = 5;
+        System.out.println(
+                "--------------------------------------------------------------------------------------------------------------------------------------|");
+        System.out.println(
+                "                                                           SemIII Java Mini Project                                                   |");
+        System.out.println(
+                "--------------------------------------------------------------------------------------------------------------------------------------|");
         patient[] p = new patient[100];
         for (int i = 0; i < 100; i++)
             p[i] = new patient();
@@ -185,7 +251,6 @@ public class Main {
         lab[] l = new lab[20];
         for (int i = 0; i < 20; i++)
             l[i] = new lab();
-	
 
         d[0].id_d = "D101";
         d[0].name_doc = "Dr.Rajendra";
@@ -288,31 +353,38 @@ public class Main {
         l[3].test = "BP";
         l[3].lab_cost = 450;
 
-	f[0].fac_name = "OPD";
-	f[1].fac_name = "Nursing Home";
-	f[2].fac_name = "24x7 emergency services";
-	f[3].fac_name = "Birth Centers";
-	f[4].fac_name = "24x7 Medical Store";
-	
-
-	
+        f[0].fac_name = "OPD";
+        f[1].fac_name = "Nursing Home";
+        f[2].fac_name = "24x7 emergency services";
+        f[3].fac_name = "Birth Centers";
+        f[4].fac_name = "24x7 Medical Store";
 
         Scanner input = new Scanner(System.in);
         int choice, j, c1, status = 1, s1 = 1, s2 = 1, s3 = 1, s4 = 1, s5 = 1, s6 = 1, s7 = 1;
         while (status == 1) {
-	System.out.println("                                                                 MAIN MENU                                                            |");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-  	System.out.println(" 1.PATIENT  2.DOCTOR  3.NURSE  4.STAFF  5.MEDICAL  6.LAB  7.FACILITIES                                                                |");                                                                                         
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-	System.out.println("Press 1 - Patients Information\nPress 2 - Doctors Information\nPress 3 - Nurse Information\nPress 4 - Staff Information\nPress 5 - Medical Information\nPress 6 - Lab Information\nPress 7 - Medical Facilities\n ");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-	    choice = input.nextInt();
-	
+            System.out.println(
+                    "                                                                 MAIN MENU                                                            |");
+            System.out.println(
+                    "--------------------------------------------------------------------------------------------------------------------------------------|");
+            System.out.println(
+                    " 1.PATIENT  2.DOCTOR  3.NURSE  4.STAFF  5.MEDICAL  6.LAB  7.FACILITIES                                                                |");
+            System.out.println(
+                    "--------------------------------------------------------------------------------------------------------------------------------------|");
+            System.out.println(
+                    "Press 1 - Patients Information\nPress 2 - Doctors Information\nPress 3 - Nurse Information\nPress 4 - Staff Information\nPress 5 - Medical Information\nPress 6 - Lab Information\nPress 7 - Medical Facilities\n ");
+            System.out.println(
+                    "--------------------------------------------------------------------------------------------------------------------------------------|");
+            System.out.println("Enter your choice:");
+            choice = input.nextInt();
+
             switch (choice) {
             case 1: {
-                System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-  		System.out.println("                                                PATIENT'S INFORMATION                                                                 |");                                                                                         
-        	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "                                                PATIENT'S INFORMATION                                                                 |");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
                 s1 = 1;
                 while (s1 == 1) {
                     System.out.println("1. Add New Patient Entries\n2.Check Existing Patient List");
@@ -324,9 +396,12 @@ public class Main {
                         break;
                     }
                     case 2: {
-		System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-  		System.out.println(" ID \t NAME\t\t DISEASE\t GENDER \tADMIT STATUS \t AGE                                                          |");                                                                                         
-        	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                " ID \t NAME\t\t DISEASE\t GENDER \tADMIT STATUS \t AGE                                                          |");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count1; j++) {
                             p[j].patient_info();
                         }
@@ -340,9 +415,12 @@ public class Main {
             }
 
             case 2: {
-                System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-  		System.out.println("                                                DOCTOR'S INFORMATION                                                                  |");                                                                                         
-        	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "                                                DOCTOR'S INFORMATION                                                                  |");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
                 s2 = 1;
                 while (s2 == 1) {
                     System.out.println("1.Add New Entry\n2.Existing Doctors List");
@@ -354,9 +432,12 @@ public class Main {
                         break;
                     }
                     case 2: {
-                        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-         		System.out.println("\nId \t Name\t\t Specilist \t Timing \t\tQualification \t Room No.                                        |");
-                	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "\nId \t Name\t\t Specilist \t Timing \t\tQualification \t Room No.                                        |");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count2; j++) {
                             d[j].doctor_info();
                         }
@@ -371,9 +452,12 @@ public class Main {
             }
 
             case 3: {
-		System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-  		System.out.println("                                                NURSE INFORMATION                                                                  |");                                                                                         
-        	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "                                                NURSE INFORMATION                                                                  |");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
 
                 s3 = 1;
                 while (s3 == 1) {
@@ -386,9 +470,12 @@ public class Main {
                         break;
                     }
                     case 2: {
-                       	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-           		System.out.println("\nId \t Name\t\t  Gender \t Department  \t\t Shift  \t Salary                                           |");
-                       	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "\nId \t Name\t\t  Gender \t Department  \t\t Shift  \t Salary                                           |");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count3; j++) {
                             n[j].nurse_info();
                         }
@@ -403,9 +490,12 @@ public class Main {
 
             case 4: {
 
-              	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println("                                                 STAFF SECTION                                                                        |");
-      		System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "                                                 STAFF SECTION                                                                        |");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
                 s4 = 1;
                 while (s4 == 1) {
                     System.out.println("1.Add New Entry\n2.Check Existing entries of the Staff");
@@ -417,9 +507,12 @@ public class Main {
                         break;
                     }
                     case 2: {
-			System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println("\nId \t Name \t\t  Gender \t  Department \t Salary                                                      |");
-      			System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "\nId \t Name \t\t  Gender \t  Department \t Salary                                                      |");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count4; j++) {
                             s[j].staff_info();
                         }
@@ -432,10 +525,13 @@ public class Main {
                 break;
             }
 
-            case 5: {	
-		System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println("                                                MEDICINE SECTION                                                                      |");
-                System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+            case 5: {
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "                                                MEDICINE SECTION                                                                      |");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
 
                 s5 = 1;
                 while (s5 == 1) {
@@ -448,9 +544,12 @@ public class Main {
                         break;
                     }
                     case 2: {
-                        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println("Name \t Company \t Expiry Date \t Cost                                                                               |");
-                   	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "Name \t Company \t Expiry Date \t Cost                                                                               |");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count5; j++) {
                             m[j].find_medi();
                         }
@@ -464,9 +563,12 @@ public class Main {
 
             case 6: {
                 s6 = 1;
-               	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println("                                             LABORATORY SECTION                                                                       |");
-                System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "                                             LABORATORY SECTION                                                                       |");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
                 while (s6 == 1) {
                     System.out.println("1.Add New Entry \n2.Existing Laboratories List");
                     c1 = input.nextInt();
@@ -477,9 +579,12 @@ public class Main {
                         break;
                     }
                     case 2: {
-                       	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println("Fecilities\t\t Cost                                                                                                     |");
-                       	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "Fecilities\t\t Cost                                                                                                     |");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count6; j++) {
                             l[j].lab_list();
                         }
@@ -494,9 +599,12 @@ public class Main {
 
             case 7: {
                 s7 = 1;
-             	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println("                                       HOSPITAL FACILITY SECTION                                                                      |");
-                System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                System.out.println(
+                        "                                       HOSPITAL FACILITY SECTION                                                                      |");
+                System.out.println(
+                        "--------------------------------------------------------------------------------------------------------------------------------------|");
                 while (s7 == 1) {
                     System.out.println("1.Add New Facility\n2.Existing Facilities List");
                     c1 = input.nextInt();
@@ -507,9 +615,12 @@ public class Main {
                         break;
                     }
                     case 2: {
-			System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println("Hospital  Facility are:                                                                                                               |");
-                       	System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
+                        System.out.println(
+                                "Hospital  Facility are:                                                                                                               |");
+                        System.out.println(
+                                "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count7; j++) {
                             f[j].show_faci();
                         }
