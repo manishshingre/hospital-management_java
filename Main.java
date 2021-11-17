@@ -1,88 +1,96 @@
 import java.util.*;
-import javax.swing.JOptionPane ;
-
+import javax.swing.JOptionPane;
 
 class patient {
     String pa_id, name_p, disease, gender, admit_status, Age;
+    String[] choices = { "Male", "Female", "Others" };
     int age_p;
 
     void new_patient() {
-        
-        pa_id = JOptionPane.showInputDialog("Enter Patient ID:");
-        name_p = JOptionPane.showInputDialog("Enter Name:");
-        disease = JOptionPane.showInputDialog("Enter Disease Caused:");
-        gender = JOptionPane.showInputDialog("Enter Gender:");
-        admit_status = JOptionPane.showInputDialog("Enter Admission Status :");
+
+        pa_id = JOptionPane.showInputDialog(null, "Enter Patient ID:", "Patient Details", JOptionPane.QUESTION_MESSAGE);
+        name_p = JOptionPane.showInputDialog(null, "Enter Name:", "Patient Details", JOptionPane.QUESTION_MESSAGE);
+        disease = JOptionPane.showInputDialog(null, "Enter Disease Caused:", "Patient Details",
+                JOptionPane.QUESTION_MESSAGE);
+        gender = (String) JOptionPane.showInputDialog(null, "Enter Gender:", "Patient Details",
+                JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
+        admit_status = JOptionPane.showInputDialog(null, "Enter Admission Status :", "Patient Details",
+                JOptionPane.QUESTION_MESSAGE);
         boolean flag = false;
         do {
             try {
-                Age = JOptionPane.showInputDialog("Enter Age:");
-                age_p = Integer.parseInt (Age);
+                Age = JOptionPane.showInputDialog(null, "Enter Age:", "Patient Details", JOptionPane.QUESTION_MESSAGE);
+                age_p = Integer.parseInt(Age);
                 flag = true;
             } catch (NumberFormatException exception) {
-               JOptionPane.showMessageDialog(null, "Enter only integer");
-                
+                JOptionPane.showMessageDialog(null, "Enter only integer");
+
             }
         } while (flag == false);
 
     }
 
     void patient_info() {
-        System.out.println(pa_id + "\t" + name_p + " \t" + disease + "    \t" + gender + "     \t" + admit_status
-                + "\t\t " + age_p);
+        System.out.println(
+                pa_id + "\t" + name_p + " \t" + disease + "    \t" + gender + "     \t" + admit_status + "\t " + age_p);
     }
 }
 
 class doctor {
-    String id_d, name_doc, specialist, appoint_time, doc_qual , room;
-    int droom;
+    String id_d, name_d, specialist, appoint_time_d, qual_d, room;
+    int room_d;
 
     void new_doctor() {
-        
-        
-        id_d = JOptionPane.showInputDialog("Enter Doctor's ID:");
-        name_doc =  JOptionPane.showInputDialog("Enter Name:");
-        specialist =  JOptionPane.showInputDialog("Enter Specialization:");
-        appoint_time =  JOptionPane.showInputDialog("Enter Work Time:");
-        doc_qual =  JOptionPane.showInputDialog("Enter Qualification:");
+
+        id_d = JOptionPane.showInputDialog(null, "Enter Doctor's ID:", "Doctor Details", JOptionPane.QUESTION_MESSAGE);
+        name_d = JOptionPane.showInputDialog(null, "Enter Name:", "Doctor Details", JOptionPane.QUESTION_MESSAGE);
+        specialist = JOptionPane.showInputDialog(null, "Enter Specialization:", "Doctor Details",
+                JOptionPane.QUESTION_MESSAGE);
+        appoint_time_d = JOptionPane.showInputDialog(null, "Enter Work Time:", "Doctor Details",
+                JOptionPane.QUESTION_MESSAGE);
+        qual_d = JOptionPane.showInputDialog(null, "Enter Qualification:", "Doctor Details",
+                JOptionPane.QUESTION_MESSAGE);
         boolean flag = false;
         do {
             try {
-                room =  JOptionPane.showInputDialog("Enter Room No:");
-                droom = Integer.parseInt (room);
+                room = JOptionPane.showInputDialog(null, "Enter Room No:", "Doctor Details",
+                        JOptionPane.QUESTION_MESSAGE);
+                room_d = Integer.parseInt(room);
                 flag = true;
-            } 
-            catch (NumberFormatException exception) {
+            } catch (NumberFormatException exception) {
                 JOptionPane.showMessageDialog(null, "Enter only integer");
             }
         } while (flag == false);
+
     }
 
     void doctor_info() {
-        System.out.println(id_d + "\t" + name_doc + "  \t" + specialist + "     \t" + appoint_time + "    \t" + doc_qual
-                + "       \t" + droom);
+        System.out.println(id_d + "\t" + name_d + " \t\t" + specialist + "     \t" + appoint_time_d + "    \t" + qual_d
+                + "       \t" + room_d);
     }
 }
 
 class staff {
     String id_s, name_s, gender_s, department_s, time_s, salary;
+    String[] choices = { "Male", "Female", "Others" };
     int salary_s;
 
     void new_staff() {
-        
-        
-        id_s = JOptionPane.showInputDialog("Enter Staff ID:");
-        name_s = JOptionPane.showInputDialog("Enter Name:");
-        gender_s = JOptionPane.showInputDialog("Enter Gender:");
-        department_s = JOptionPane.showInputDialog("Enter Department:");
+
+        id_s = JOptionPane.showInputDialog(null, "Enter Staff ID:", "Staff Details", JOptionPane.QUESTION_MESSAGE);
+        name_s = JOptionPane.showInputDialog(null, "Enter Name:", "Staff Details", JOptionPane.QUESTION_MESSAGE);
+        gender_s = (String) JOptionPane.showInputDialog(null, "Enter Gender:", "Staff Details",
+                JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
+        department_s = JOptionPane.showInputDialog(null, "Enter Department:", "Staff Details",
+                JOptionPane.QUESTION_MESSAGE);
         boolean flag = false;
         do {
             try {
-                salary = JOptionPane.showInputDialog("Enter Salary:");
+                salary = JOptionPane.showInputDialog(null, "Enter Salary:", "Staff Details",
+                        JOptionPane.QUESTION_MESSAGE);
                 salary_s = Integer.parseInt(salary);
                 flag = true;
-            } 
-            catch (NumberFormatException exception) {
+            } catch (NumberFormatException exception) {
                 JOptionPane.showMessageDialog(null, "ENTER THE SALARY IN DIGITS ONLY:");
             }
         } while (flag == false);
@@ -90,26 +98,29 @@ class staff {
     }
 
     void staff_info() {
-        System.out.println(id_s + "\t" + name_s + "\t" + gender_s + "\t" + department_s + "\t" + salary_s);
+        System.out.println(id_s + " \t" + name_s + " \t\t " + gender_s + "\t\t" + department_s + "\t" + salary_s);
     }
 }
 
 class nurse {
-    String id_n, name_n, gender_n, department_n, shift_n , salaryn;
+    String id_n, name_n, gender_n, department_n, shift_n, salaryn;
+    String[] choices = { "Male", "Female", "Others" };
     int salary_n;
 
     void new_nurse() {
-        
-        
-        id_n =  JOptionPane.showInputDialog("Enter Nurse ID:"); 
-        name_n =  JOptionPane.showInputDialog("Enter Name:");
-        gender_n =  JOptionPane.showInputDialog("Enter Gender:");
-        department_n =  JOptionPane.showInputDialog("Enter Department:");
-        shift_n =  JOptionPane.showInputDialog("Enter Shift:");
+
+        id_n = JOptionPane.showInputDialog(null, "Enter Nurse ID:", "Nurse Details", JOptionPane.QUESTION_MESSAGE);
+        name_n = JOptionPane.showInputDialog(null, "Enter Name:", "Nurse Details", JOptionPane.QUESTION_MESSAGE);
+        gender_n = (String) JOptionPane.showInputDialog(null, "Enter Gender:", "Nurse Details",
+                JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
+        department_n = JOptionPane.showInputDialog(null, "Enter Department:", "Nurse Details",
+                JOptionPane.QUESTION_MESSAGE);
+        shift_n = JOptionPane.showInputDialog(null, "Enter Shift:", "Nurse Details", JOptionPane.QUESTION_MESSAGE);
         boolean flag = false;
         do {
             try {
-                salaryn = JOptionPane.showInputDialog("Enter Salary:");
+                salaryn = JOptionPane.showInputDialog(null, "Enter Salary:", "Nurse Details",
+                        JOptionPane.QUESTION_MESSAGE);
                 salary_n = Integer.parseInt(salaryn);
                 flag = true;
             } catch (NumberFormatException exception) {
@@ -120,7 +131,7 @@ class nurse {
     }
 
     void nurse_info() {
-        System.out.println(id_n + "\t\t" + name_n + "\t\t" + gender_n + "\t\t" + department_n + "\t\t" + shift_n
+        System.out.println(id_n + "\t" + name_n + "\t\t" + gender_n + "\t\t" + department_n + "\t\t\t" + shift_n
                 + "\t\t" + salary_n);
     }
 }
@@ -130,15 +141,18 @@ class medical {
     int med_cost, count;
 
     void new_medi() {
-        
-      
-        med_name =  JOptionPane.showInputDialog("Enter Name of the Medicine:");
-        med_comp =  JOptionPane.showInputDialog("Enter Name of the Company:");
-        exp_date =  JOptionPane.showInputDialog("Enter Expiry Date:");
+
+        med_name = JOptionPane.showInputDialog(null, "Enter Name of the Medicine:", "Medicines Details",
+                JOptionPane.QUESTION_MESSAGE);
+        med_comp = JOptionPane.showInputDialog(null, "Enter Name of the Company:", "Medicines Details",
+                JOptionPane.QUESTION_MESSAGE);
+        exp_date = JOptionPane.showInputDialog(null, "Enter Expiry Date:", "Medicines Details",
+                JOptionPane.QUESTION_MESSAGE);
         boolean flag = false;
         do {
             try {
-                cost = JOptionPane.showInputDialog("Enter the Cost");
+                cost = JOptionPane.showInputDialog(null, "Enter the Cost", "Medicines Details",
+                        JOptionPane.QUESTION_MESSAGE);
                 med_cost = Integer.parseInt(cost);
                 flag = true;
             } catch (NumberFormatException exception) {
@@ -146,21 +160,22 @@ class medical {
             }
         } while (flag == false);
 
-        
         boolean flag1 = false;
         do {
             try {
-                units = JOptionPane.showInputDialog("Enter No. of Units");
+                units = JOptionPane.showInputDialog(null, "Enter No. of Units", "Medicines Details",
+                        JOptionPane.QUESTION_MESSAGE);
                 count = Integer.parseInt(units);
                 flag1 = true;
             } catch (NumberFormatException exception) {
                 JOptionPane.showMessageDialog(null, "ENTER UNITS IN DIGITS ONLY");
             }
         } while (flag1 == false);
+
     }
 
     void find_medi() {
-        System.out.println(med_name + "  \t" + med_comp + "    \t" + exp_date + "     \t" + med_cost);
+        System.out.println(med_name + "  \t" + med_comp + "    \t" + exp_date + "     \t" + med_cost + "\t" + count);
     }
 }
 
@@ -169,14 +184,14 @@ class lab {
     int lab_cost;
 
     void new_lab() {
-       
-        
-        test =  JOptionPane.showInputDialog("Enter Test Name:");
-        
+
+        test = JOptionPane.showInputDialog(null, "Enter Test Name:", "Lab Details", JOptionPane.QUESTION_MESSAGE);
+
         boolean flag = false;
         do {
             try {
-                cost = JOptionPane.showInputDialog("Enter the Cost:");
+                cost = JOptionPane.showInputDialog(null, "Enter the Cost:", "Lab Details",
+                        JOptionPane.QUESTION_MESSAGE);
                 lab_cost = Integer.parseInt(cost);
                 flag = true;
             } catch (NumberFormatException exception) {
@@ -186,7 +201,7 @@ class lab {
     }
 
     void lab_list() {
-        System.out.println(test + "\t\t" + lab_cost);
+        System.out.println(test + "\t\t\t" + lab_cost);
     }
 }
 
@@ -194,9 +209,9 @@ class facility {
     String fac_name;
 
     void add_faci() {
-        
-       
-        fac_name =  JOptionPane.showInputDialog("Enter Facility Name:");
+
+        fac_name = JOptionPane.showInputDialog(null, "Enter Facility Name:", "Facility Details",
+                JOptionPane.QUESTION_MESSAGE);
     }
 
     void show_faci() {
@@ -209,9 +224,11 @@ public class Main {
         int count1 = 0, count2 = 4, count3 = 4, count4 = 4, count5 = 4, count6 = 4, count7 = 5;
         System.out.println(
                 "--------------------------------------------------------------------------------------------------------------------------------------|");
-                
-        System.out.println("                                                        ***HOSPITAL MANAGEMENT SYSTEM***                                              |");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------|");
+
+        System.out.println(
+                "                                                        ***HOSPITAL MANAGEMENT SYSTEM***                                              |");
+        System.out.println(
+                "--------------------------------------------------------------------------------------------------------------------------------------|");
         patient[] p = new patient[100];
         for (int i = 0; i < 100; i++)
             p[i] = new patient();
@@ -235,29 +252,29 @@ public class Main {
             l[i] = new lab();
 
         d[0].id_d = "D101";
-        d[0].name_doc = "Dr.Rajendra";
+        d[0].name_d = "Dr.Rajendra Shinde";
         d[0].specialist = "Orthopedic";
-        d[0].appoint_time = "7.00am to 1.00pm";
-        d[0].doc_qual = "MBBS,MD";
-        d[0].droom = 11;
+        d[0].appoint_time_d = "7.00am to 1.00pm";
+        d[0].qual_d = "MBBS,MD";
+        d[0].room_d = 11;
         d[1].id_d = "D102";
-        d[1].name_doc = "Dr.Suresh";
+        d[1].name_d = "Dr.Suresh Chaubey";
         d[1].specialist = "Physician";
-        d[1].appoint_time = "10.00am to 3.00pm";
-        d[1].doc_qual = "MBBS,MD";
-        d[1].droom = 12;
+        d[1].appoint_time_d = "10.00am to 3.00pm";
+        d[1].qual_d = "MBBS,MD";
+        d[1].room_d = 12;
         d[2].id_d = "D103";
-        d[2].name_doc = "Dr.Sashikala";
+        d[2].name_d = "Dr.Sashikala Ketkar";
         d[2].specialist = "Surgeon";
-        d[2].appoint_time = "8pm to 2.00am";
-        d[2].doc_qual = "BDM";
-        d[2].droom = 13;
+        d[2].appoint_time_d = "8pm to 2.00am";
+        d[2].qual_d = "BDM";
+        d[2].room_d = 13;
         d[3].id_d = "D104";
-        d[3].name_doc = "Dr.Aashish";
+        d[3].name_d = "Dr.Aashish Chaudhary";
         d[3].specialist = "Nerologist";
-        d[3].appoint_time = "5.00pm to 9.00pm";
-        d[3].doc_qual = "MBBS,DM";
-        d[3].droom = 14;
+        d[3].appoint_time_d = "5.00pm to 9.00pm";
+        d[3].qual_d = "MBBS,DM";
+        d[3].room_d = 14;
 
         s[0].id_s = "S101";
         s[0].name_s = "Raju";
@@ -267,7 +284,7 @@ public class Main {
         s[1].id_s = "S102";
         s[1].name_s = "Raghu";
         s[1].department_s = "Security";
-        s[1].gender_s = "Cleaning";
+        s[1].gender_s = "Male";
         s[1].salary_s = 20000;
         s[2].id_s = "S103";
         s[2].name_s = "Anjali";
@@ -301,7 +318,7 @@ public class Main {
         n[3].id_n = "N104";
         n[3].name_n = "Shewta";
         n[3].gender_n = "Female";
-        n[3].department_n = "Emergency";
+        n[3].department_n = "ENT";
         n[3].shift_n = "Night";
         n[3].salary_n = 50000;
 
@@ -330,7 +347,7 @@ public class Main {
         l[0].lab_cost = 500;
         l[1].test = "Thyroid";
         l[1].lab_cost = 700;
-        l[2].test = "Lipid Panel";
+        l[2].test = "Lipid";
         l[2].lab_cost = 800;
         l[3].test = "BP";
         l[3].lab_cost = 450;
@@ -389,6 +406,10 @@ public class Main {
                         }
                         break;
                     }
+                    default: {
+                        System.out.println("Invalid Input");
+                        break;
+                    }
                     }
                     System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
                     s1 = input.nextInt();
@@ -417,12 +438,16 @@ public class Main {
                         System.out.println(
                                 "--------------------------------------------------------------------------------------------------------------------------------------|");
                         System.out.println(
-                                "\nId \t Name\t\t Specilist \t Timing \t\tQualification \t Room No.                                        |");
+                                "\nId \t Name \t\t\t\t Specilist \t Timing \t\tQualification \t Room No.                                        |");
                         System.out.println(
                                 "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count2; j++) {
                             d[j].doctor_info();
                         }
+                        break;
+                    }
+                    default: {
+                        System.out.println("Invalid Input");
                         break;
                     }
                     }
@@ -463,6 +488,10 @@ public class Main {
                         }
                         break;
                     }
+                    default: {
+                        System.out.println("Invalid Input");
+                        break;
+                    }
                     }
                     System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
                     s3 = input.nextInt();
@@ -500,6 +529,10 @@ public class Main {
                         }
                         break;
                     }
+                    default: {
+                        System.out.println("Invalid Input");
+                        break;
+                    }
                     }
                     System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
                     s4 = input.nextInt();
@@ -528,17 +561,20 @@ public class Main {
                     case 2: {
                         System.out.println(
                                 "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println(
-                                "Name \t Company \t Expiry Date \t Cost                                                                               |");
+                        System.out.println("Name \t Company \t Expiry Date \t Cost \t Units ");
                         System.out.println(
                                 "--------------------------------------------------------------------------------------------------------------------------------------|");
                         for (j = 0; j < count5; j++) {
                             m[j].find_medi();
                         }
                     }
+                    default: {
+                        System.out.println("Invalid Input");
+                        break;
+                    }
                     }
                     System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s4 = input.nextInt();
+                    s5 = input.nextInt();
                 }
                 break;
             }
@@ -572,9 +608,13 @@ public class Main {
                         }
                         break;
                     }
+                    default: {
+                        System.out.println("Invalid Input");
+                        break;
+                    }
                     }
                     System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s4 = input.nextInt();
+                    s6 = input.nextInt();
                 }
                 break;
             }
@@ -606,6 +646,10 @@ public class Main {
                         for (j = 0; j < count7; j++) {
                             f[j].show_faci();
                         }
+                        break;
+                    }
+                    default: {
+                        System.out.println("Invalid Input");
                         break;
                     }
                     }
