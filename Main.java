@@ -377,288 +377,292 @@ public class Main {
             choice = input.nextInt();
 
             switch (choice) {
-            case 1: {
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println(
-                        "                                                PATIENT'S INFORMATION                                                                 |");
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                s1 = 1;
-                while (s1 == 1) {
-                    System.out.println("1. Add New Patient Entries\n2.Check Existing Patient List");
-                    c1 = input.nextInt();
-                    switch (c1) {
-                    case 1: {
-                        p[count1].new_patient();
-                        count1++;
-                        break;
-                    }
-                    case 2: {
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println(
-                                " ID \t NAME\t\t DISEASE\t GENDER \tADMIT STATUS \t AGE                                                          |");
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        for (j = 0; j < count1; j++) {
-                            p[j].patient_info();
+                case 1: {
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    System.out.println(
+                            "                                                PATIENT'S INFORMATION                                                                 |");
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    s1 = 1;
+                    while (s1 == 1) {
+                        System.out.println("1. Add New Patient Entries\n2.Check Existing Patient List");
+                        c1 = input.nextInt();
+                        switch (c1) {
+                            case 1: {
+                                p[count1].new_patient();
+                                count1++;
+                                break;
+                            }
+                            case 2: {
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                System.out.println(
+                                        " ID \t NAME\t\t DISEASE\t GENDER \tADMIT STATUS \t AGE                                                          |");
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                for (j = 0; j < count1; j++) {
+                                    p[j].patient_info();
+                                }
+                                break;
+                            }
+                            default: {
+                                System.out.println("Invalid Input");
+                                break;
+                            }
                         }
-                        break;
+                        System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                        s1 = input.nextInt();
                     }
-                    default: {
-                        System.out.println("Invalid Input");
-                        break;
-                    }
-                    }
-                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s1 = input.nextInt();
+                    break;
                 }
-                break;
-            }
 
-            case 2: {
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println(
-                        "                                                DOCTOR'S INFORMATION                                                                  |");
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                s2 = 1;
-                while (s2 == 1) {
-                    System.out.println("1.Add New Entry\n2.Existing Doctors List");
-                    c1 = input.nextInt();
-                    switch (c1) {
-                    case 1: {
-                        d[count2].new_doctor();
-                        count2++;
-                        break;
-                    }
-                    case 2: {
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println(
-                                "\nId \t Name \t\t\t\t Specilist \t Timing \t\tQualification \t Room No.                                        |");
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        for (j = 0; j < count2; j++) {
-                            d[j].doctor_info();
+                case 2: {
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    System.out.println(
+                            "                                                DOCTOR'S INFORMATION                                                                  |");
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    s2 = 1;
+                    while (s2 == 1) {
+                        System.out.println("1.Add New Entry\n2.Existing Doctors List");
+                        c1 = input.nextInt();
+                        switch (c1) {
+                            case 1: {
+                                d[count2].new_doctor();
+                                count2++;
+                                break;
+                            }
+                            case 2: {
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                System.out.println(
+                                        "\nId \t Name \t\t\t\t Specilist \t Timing \t\tQualification \t Room No.                                        |");
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                for (j = 0; j < count2; j++) {
+                                    d[j].doctor_info();
+                                }
+                                break;
+                            }
+                            default: {
+                                System.out.println("Invalid Input");
+                                break;
+                            }
                         }
-                        break;
+                        System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                        s2 = input.nextInt();
                     }
-                    default: {
-                        System.out.println("Invalid Input");
-                        break;
-                    }
-                    }
-                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s2 = input.nextInt();
+                    break;
+
                 }
-                break;
 
-            }
+                case 3: {
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    System.out.println(
+                            "                                                NURSE INFORMATION                                                                  |");
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
 
-            case 3: {
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println(
-                        "                                                NURSE INFORMATION                                                                  |");
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-
-                s3 = 1;
-                while (s3 == 1) {
-                    System.out.println("1.Add New Entry\n2.Check Existing entries of the Staff");
-                    c1 = input.nextInt();
-                    switch (c1) {
-                    case 1: {
-                        n[count3].new_nurse();
-                        count3++;
-                        break;
-                    }
-                    case 2: {
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println(
-                                "\nId \t Name\t\t  Gender \t Department  \t\t Shift  \t Salary                                           |");
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        for (j = 0; j < count3; j++) {
-                            n[j].nurse_info();
+                    s3 = 1;
+                    while (s3 == 1) {
+                        System.out.println("1.Add New Entry\n2.Check Existing entries of the Staff");
+                        c1 = input.nextInt();
+                        switch (c1) {
+                            case 1: {
+                                n[count3].new_nurse();
+                                count3++;
+                                break;
+                            }
+                            case 2: {
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                System.out.println(
+                                        "\nId \t Name\t\t  Gender \t Department  \t\t Shift  \t Salary                                           |");
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                for (j = 0; j < count3; j++) {
+                                    n[j].nurse_info();
+                                }
+                                break;
+                            }
+                            default: {
+                                System.out.println("Invalid Input");
+                                break;
+                            }
                         }
-                        break;
+                        System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                        s3 = input.nextInt();
                     }
-                    default: {
-                        System.out.println("Invalid Input");
-                        break;
-                    }
-                    }
-                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s3 = input.nextInt();
+                    break;
                 }
-                break;
-            }
 
-            case 4: {
+                case 4: {
 
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println(
-                        "                                                 STAFF SECTION                                                                        |");
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                s4 = 1;
-                while (s4 == 1) {
-                    System.out.println("1.Add New Entry\n2.Check Existing entries of the Staff");
-                    c1 = input.nextInt();
-                    switch (c1) {
-                    case 1: {
-                        s[count4].new_staff();
-                        count4++;
-                        break;
-                    }
-                    case 2: {
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println(
-                                "\nId \t Name \t\t  Gender \t  Department \t Salary                                                      |");
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        for (j = 0; j < count4; j++) {
-                            s[j].staff_info();
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    System.out.println(
+                            "                                                 STAFF SECTION                                                                        |");
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    s4 = 1;
+                    while (s4 == 1) {
+                        System.out.println("1.Add New Entry\n2.Check Existing entries of the Staff");
+                        c1 = input.nextInt();
+                        switch (c1) {
+                            case 1: {
+                                s[count4].new_staff();
+                                count4++;
+                                break;
+                            }
+                            case 2: {
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                System.out.println(
+                                        "\nId \t Name \t\t  Gender \t  Department \t Salary                                                      |");
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                for (j = 0; j < count4; j++) {
+                                    s[j].staff_info();
+                                }
+                                break;
+                            }
+                            default: {
+                                System.out.println("Invalid Input");
+                                break;
+                            }
                         }
-                        break;
+                        System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                        s4 = input.nextInt();
                     }
-                    default: {
-                        System.out.println("Invalid Input");
-                        break;
-                    }
-                    }
-                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s4 = input.nextInt();
+                    break;
                 }
-                break;
-            }
 
-            case 5: {
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println(
-                        "                                                MEDICINE SECTION                                                                      |");
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                case 5: {
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    System.out.println(
+                            "                                                MEDICINE SECTION                                                                      |");
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
 
-                s5 = 1;
-                while (s5 == 1) {
-                    System.out.println("1.Add New Entry\n2. Existing Medicines List");
-                    c1 = input.nextInt();
-                    switch (c1) {
-                    case 1: {
-                        m[count5].new_medi();
-                        count5++;
-                        break;
-                    }
-                    case 2: {
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println("Name \t Company \t Expiry Date \t Cost \t Units ");
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        for (j = 0; j < count5; j++) {
-                            m[j].find_medi();
+                    s5 = 1;
+                    while (s5 == 1) {
+                        System.out.println("1.Add New Entry\n2. Existing Medicines List");
+                        c1 = input.nextInt();
+                        switch (c1) {
+                            case 1: {
+                                m[count5].new_medi();
+                                count5++;
+                                break;
+                            }
+                            case 2: {
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                System.out.println("Name \t Company \t Expiry Date \t Cost \t Units ");
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                for (j = 0; j < count5; j++) {
+                                    m[j].find_medi();
+                                }
+                            }
+                            default: {
+                                System.out.println("Invalid Input");
+                                break;
+                            }
                         }
+                        System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                        s5 = input.nextInt();
                     }
-                    default: {
-                        System.out.println("Invalid Input");
-                        break;
-                    }
-                    }
-                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s5 = input.nextInt();
+                    break;
                 }
-                break;
-            }
 
-            case 6: {
-                s6 = 1;
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println(
-                        "                                             LABORATORY SECTION                                                                       |");
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                while (s6 == 1) {
-                    System.out.println("1.Add New Entry \n2.Existing Laboratories List");
-                    c1 = input.nextInt();
-                    switch (c1) {
-                    case 1: {
-                        l[count6].new_lab();
-                        count6++;
-                        break;
-                    }
-                    case 2: {
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println(
-                                "Fecilities\t\t Cost                                                                                                     |");
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        for (j = 0; j < count6; j++) {
-                            l[j].lab_list();
+                case 6: {
+                    s6 = 1;
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    System.out.println(
+                            "                                             LABORATORY SECTION                                                                       |");
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    while (s6 == 1) {
+                        System.out.println("1.Add New Entry \n2.Existing Laboratories List");
+                        c1 = input.nextInt();
+                        switch (c1) {
+                            case 1: {
+                                l[count6].new_lab();
+                                count6++;
+                                break;
+                            }
+                            case 2: {
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                System.out.println(
+                                        "Fecilities\t\t Cost                                                                                                     |");
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                for (j = 0; j < count6; j++) {
+                                    l[j].lab_list();
+                                }
+                                break;
+                            }
+                            default: {
+                                System.out.println("Invalid Input");
+                                break;
+                            }
                         }
-                        break;
+                        System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                        s6 = input.nextInt();
                     }
-                    default: {
-                        System.out.println("Invalid Input");
-                        break;
-                    }
-                    }
-                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s6 = input.nextInt();
+                    break;
                 }
-                break;
-            }
 
-            case 7: {
-                s7 = 1;
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                System.out.println(
-                        "                                       HOSPITAL FACILITY SECTION                                                                      |");
-                System.out.println(
-                        "--------------------------------------------------------------------------------------------------------------------------------------|");
-                while (s7 == 1) {
-                    System.out.println("1.Add New Facility\n2.Existing Facilities List");
-                    c1 = input.nextInt();
-                    switch (c1) {
-                    case 1: {
-                        f[count7].add_faci();
-                        count7++;
-                        break;
-                    }
-                    case 2: {
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        System.out.println(
-                                "Hospital  Facility are:                                                                                                               |");
-                        System.out.println(
-                                "--------------------------------------------------------------------------------------------------------------------------------------|");
-                        for (j = 0; j < count7; j++) {
-                            f[j].show_faci();
+                case 7: {
+                    s7 = 1;
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    System.out.println(
+                            "                                       HOSPITAL FACILITY SECTION                                                                      |");
+                    System.out.println(
+                            "--------------------------------------------------------------------------------------------------------------------------------------|");
+                    while (s7 == 1) {
+                        System.out.println("1.Add New Facility\n2.Existing Facilities List");
+                        c1 = input.nextInt();
+                        switch (c1) {
+                            case 1: {
+                                f[count7].add_faci();
+                                count7++;
+                                break;
+                            }
+                            case 2: {
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                System.out.println(
+                                        "Hospital  Facility are:                                                                                                               |");
+                                System.out.println(
+                                        "--------------------------------------------------------------------------------------------------------------------------------------|");
+                                for (j = 0; j < count7; j++) {
+                                    f[j].show_faci();
+                                }
+                                break;
+                            }
+                            default: {
+                                System.out.println("Invalid Input");
+                                break;
+                            }
                         }
-                        break;
+                        System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
+                        s7 = input.nextInt();
                     }
-                    default: {
-                        System.out.println("Invalid Input");
-                        break;
-                    }
-                    }
-                    System.out.println("\nReturn to Back Press 1 and for Main Menu Press 0");
-                    s7 = input.nextInt();
-                }
-                break;
+                    break;
 
-            }
+                }
+                default: {
+                    System.out.println("Invalid Input");
+                    break;
+                }
 
             }
         }
