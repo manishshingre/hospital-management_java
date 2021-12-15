@@ -567,6 +567,7 @@ public class Main {
                                 for (j = 0; j < count5; j++) {
                                     m[j].find_medi();
                                 }
+                                break;
                             }
                             default: {
                                 System.out.println("Invalid Input");
