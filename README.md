@@ -1,1 +1,1 @@
-# java-mini-SemIII
+# Hospital Management System
